@@ -1,0 +1,152 @@
+* { box-sizing: border-box; }
+body { background-color: #e3e4e6;
+       margin: 0; 
+       color: #003366;
+       font-family: Verdana, Arial, sans-serif; }
+
+header {color: #5508a3;
+    background-image: url(logo.png);
+    background-color: #efeff4; 
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 0em;
+   text-align:right;}
+
+main {padding-left: 2em; padding-right: 2em;
+    background-color: white;
+    border: 1px solid #f7f8f9;
+    overflow: auto;
+    display: block;
+}
+
+h1 { font-size: 2em; padding: 0.2em; 
+    text-shadow: 2px 2px 1px #CCCCCC; }
+h2 { font-size: 1.2em;
+      text-shadow: 1px 1px 1px #777;}
+
+main p {
+  line-height: 1.8;
+  font-size: 1.3em; 
+}
+
+
+nav ul { list-style-type: none; 
+    display:flex; flex-direction: column;
+    justify-content: flex-end; 
+    gap: 4.5em; 
+    margin: 0; font-size: 1.5em;
+    padding: 0em 0em 1em 0em;  
+}
+nav li {
+    padding: 0.3em 0.5em;
+    text-align: right;
+    border: none; 
+}
+
+nav a { text-decoration: none;}
+nav a:link { color: #000066; }
+nav a:visited { color: #5280C5; }
+nav a:hover { color: #3262A3;}
+
+dt { color: #5280C5; font-size: 1.1em; font-weight: bold; 
+    font-family: Georgia, "Times New Roman", serif;}
+.category { font-weight: bold; color: #5380C5; font-family: Georgia, "Times New Roman", serif;}
+
+footer { font-size: .70em;
+   font-style: italic; background-color: #AEC3E3; padding: 1em; text-align: center;}
+.address {clear: left;}
+
+section { 
+    margin-right: 1em; 
+    margin-bottom: 1em; 
+    padding: 0; 
+    background-color: #EAEAEA; 
+ }
+section h3 { padding: 0.25em; 
+    margin-top: 0; 
+    margin-bottom: 0; 
+    font-size: 110%; 
+    background-color: #AEC3E3; 
+}
+
+section p { padding-top: 0;
+    padding-bottom: .25em;
+    padding-left: .25em;
+    padding-right:  0.25em; 
+}
+
+header a:link { text-decoration: none; color: #F0F0F0; }
+header a:visited { text-decoration: none; color: #F0F0F0; }
+header a:hover { color: #AEC3E3; }
+
+#wrapper { background-color: #F0F0F0;}
+#mobile {display: inline;}
+#desktop {display: none}
+
+@media (min-width: 600px ) {
+    header { background-image: url(logo.png); }
+    h1 { font-size: 3em;}
+	nav ul { display: flex;
+         flex-flow: row nowrap;
+		 justify-content: flex-end; }
+	nav li { border-bottom: none; }
+    #flow {display: flex; flex-direction: row; flex-wrap: wrap; gap: 1em;}
+    section {min-width: 30%; flex: 1; }
+    dl {flex: 2;}
+    img {flex: 1;}
+	#mobile {display: none;}
+    #desktop {display: inline;}
+
+    
+
+
+}
+@media (min-width: 1024px) {
+    @supports (display: grid) {
+    header { grid-area: header;}
+    nav { grid-area: nav; }
+    main { grid-area: main; }
+    footer { grid-area: footer; }
+
+    #wrapper { display: grid;
+            grid-template:
+            "header header"
+            "nav nav"
+            "main main"
+            "footer footer"
+            / 180px ; }
+    nav ul {
+            display: flex;
+            flex-direction: row;
+            font-size: 1.25em;
+            font-weight: bold;
+        }
+    }
+
+}
+
+table { margin: 1em;
+border: 1px solid darkblue;
+border-collapse: collapse; 
+}
+
+td, th { border: 1px solid darkblue;
+padding: 0.5em; 
+ }
+
+table td:first-child {
+  text-align: center;
+}
+
+form { display: flex;
+flex-direction: column;
+padding-left: 1em; width: 80%; }
+input, textarea { margin-bottom: .5em; }
+
+@media (min-width: 600px) {
+    form { display: grid; grid-template-columns: 6em 1fr; grid-gap: 1em; width: 40%; }
+    input[type="submit"] { grid-column: 2; width: 9em; }
+    label {text-align: right;}
+}
+
